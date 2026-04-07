@@ -32,7 +32,6 @@ const ReadList = ({ read }) => {
                 <div className='flex items-center gap-2'>
                     <p className='text-sky-500 bg-sky-200 px-3 rounded-2xl'>{category}</p>
                     <p className='text-yellow-500 bg-yellow-200 px-3 rounded-2xl'>{rating}</p>
-                    <button className=' rounded-3xl'>View Details</button>
                 </div>
               
             </div>
