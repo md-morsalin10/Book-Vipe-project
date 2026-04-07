@@ -1,4 +1,5 @@
 import React, { Children, createContext, useState } from 'react';
+import { toast } from 'react-toastify';
 
 export const BookContext = createContext()
 
@@ -10,11 +11,11 @@ const BookProvider = ({ children }) => {
     const handleMarkAsRead = (currentBook) => {
         const isExistedBook = readListBook.find((book) => book.bookId === currentBook.bookId);
         if (isExistedBook) {
-            alert('The book is all ready existed')
+            toast.error(`${currentBook.bookName} all ready existed in ReadList`);
         }
         else {
             setReadListBook([...readListBook, currentBook])
-            alert("books added successfully")
+            toast.success(`${currentBook.bookName} Added in ReadList Successfully`);
         }
 
     }
@@ -22,17 +23,17 @@ const BookProvider = ({ children }) => {
         
         const isExisted = readListBook.find((book)=> book.bookId === currentBook.bookId);
         if(isExisted){
-            alert('this books  in readList')
+            toast.error(`${currentBook.bookName} is  in ReadList`);
             return;
         }
 
         const isExistedBook = wishList.find((book) => book.bookId === currentBook.bookId);
         if (isExistedBook) {
-            alert('This books is all ready Existed')
+            toast.error(`${currentBook.bookName} all ready existed in WishList`);
         }
         else {
             setWishList([...wishList, currentBook])
-            alert("added into wishlist")
+            toast.success(`${currentBook.bookName} Added in WishList Successfully`);
         }
     }
 

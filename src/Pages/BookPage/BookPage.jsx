@@ -18,7 +18,7 @@ const BookPage = () => {
         <div className='container mx-auto py-6'>
             <div className='flex justify-center items-center py-2'>
                 <div className="dropdown dropdown-start">
-                    <div tabIndex={0} role="button" className="btn m-1">Short by ⬇️</div>
+                    <div tabIndex={0} role="button" className="btn bg-pink-500 text-white m-1">Short by ⬇️</div>
                     <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
                         <li onClick={()=>setShortingType('pages')}><a>Pages</a></li>
                         <li onClick={()=> setShortingType("ratting")}><a>Ratting</a></li>
